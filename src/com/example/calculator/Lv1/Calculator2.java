@@ -17,11 +17,16 @@ public class Calculator2 {
             boolean wrongnum1 = true;
 
             while (wrongnum1) {
+
                 try {
                     System.out.println("첫 번째 숫자를 입력해주세요");
                     a = sc.nextInt();
-                    sc.nextLine();
-                    wrongnum1 = false;
+                    if(a>=0){
+                        sc.nextLine();
+                        wrongnum1 = false;
+                    } else {
+                        System.out.println("양의 정수를 입력해주세요");
+                    }
                 } catch (Exception e) {
                     System.out.println("잘못된 입력값입니다.");
                     sc.nextLine();
@@ -48,7 +53,24 @@ public class Calculator2 {
                 } else {
                     System.out.println("잘못된 입력값입니다.");
                 }
+            }
+            switch (type1) {
+                case '+':
+                    System.out.println("더하기");
+                    break;
+                case '-':
+                    System.out.println("빼기");
+                    break;
+                case '*':
+                    System.out.println("곱하기");
+                    break;
 
+                case '/':
+                    System.out.println("나누기");
+                    break;
+
+                default:
+                    System.out.println("잘못된 연산자입니다.");
             }
 
             boolean wrongnum3 = true;
@@ -57,8 +79,12 @@ public class Calculator2 {
                 try {
                     System.out.println("두 번째 숫자를 입력해주세요");
                     b = sc.nextInt();
-                    sc.nextLine();
-                    wrongnum3 = false;
+                    if(b>=0){
+                        sc.nextLine();
+                        wrongnum3 = false;
+                    } else {
+                        System.out.println("양의 정수를 입력해주세요");
+                    }
                 } catch (Exception e) {
                     System.out.println("잘못된 입력값입니다.");
                     sc.nextLine();
@@ -67,20 +93,16 @@ public class Calculator2 {
 
             switch (type1) {
                 case '+':
-                    System.out.println("더하기");
                     System.out.println(a + b);
                     break;
                 case '-':
-                    System.out.println("빼기");
                     System.out.println(a - b);
                     break;
                 case '*':
-                    System.out.println("곱하기");
                     System.out.println(a * b);
                     break;
 
                 case '/':
-                    System.out.println("나누기");
                     if (b != 0) {
                         System.out.println(a / b);
                     } else {
